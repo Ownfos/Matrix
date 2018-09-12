@@ -5,7 +5,9 @@ Matrix::Matrix() : row(0), column(0) {
 }
 
 Matrix::Matrix(vec2 data) : data(data), row(data.size()), column(data[0].size()) {
-
+	for (auto i = data.begin(); i != data.end(); i++) {
+		assert(i->size() == column && "data is not rectangle-shaped");
+	}
 }
 
 Matrix::~Matrix() {
@@ -170,7 +172,7 @@ void Matrix::handleZero() {
 void Matrix::show(int minWidth) {
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < column; j++) {
-			std::cout << std::setw(minWidth) << data[i][j] << " ";
+			std::cout << "[" << std::setw(minWidth) << data[i][j] << "]";
 		}
 		std::cout << std::endl;
 	}
