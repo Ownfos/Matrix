@@ -25,7 +25,7 @@ Matrix& Matrix::operator=(const Matrix& other) {
 
 Matrix Matrix::operator+(const Matrix& other) {
 	assert(row == other.row && "row size mismatch");
-	assert(column == other.column && "row size mismatch");
+	assert(column == other.column && "column size mismatch");
 	Matrix rtn(data);
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < other.column; j++) {
@@ -38,7 +38,7 @@ Matrix Matrix::operator+(const Matrix& other) {
 
 Matrix Matrix::operator-(const Matrix& other) {
 	assert(row == other.row && "row size mismatch");
-	assert(column == other.column && "row size mismatch");
+	assert(column == other.column && "column size mismatch");
 	Matrix rtn(data);
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < other.column; j++) {
